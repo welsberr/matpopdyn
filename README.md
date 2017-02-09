@@ -1,7 +1,7 @@
 # matpopdyn
 Matrix-based Population Dynamics (Leslie and Lefkovitch approaches)
 
-Code to generically handle population dynamics using either Leslie age-matrix or Lefkovich age-stage matrix approaches.
+Code to generically handle population dynamics using either Leslie age-matrix or Lefkovitch age-stage matrix approaches.
 
 Originally released in my blog post, "Population Modeling in Python", 2012/10/08
 http://austringer.net/wp/index.php/2012/10/08/population-modeling-in-python/
