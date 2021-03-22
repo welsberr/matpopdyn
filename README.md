@@ -6,7 +6,11 @@ Code to generically handle population dynamics using either Leslie age-matrix or
 Originally released in my blog post, "Population Modeling in Python", 2012/10/08
 http://austringer.net/wp/index.php/2012/10/08/population-modeling-in-python/
 
-Text from that post:
+matpopdyn.py : Original coding for Python 2, scraped from blog post, has character transliteration issues.
+
+matpopdyn3.py : Updated for use with Python 3, character transliterations fixed, etc.
+
+Text from the blog post:
 
 A long-time standard method in population modeling is the Leslie matrix. This technique applies when one has data about the age structure of a population and produces estimates going forward by using matrix multiplication to go from the population numbers, fecundity, and survivorship numbers to get the estimate of the population in each age class at the next time step.
 
