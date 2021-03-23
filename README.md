@@ -6,9 +6,8 @@ Code to generically handle population dynamics using either Leslie age-matrix or
 Originally released in my blog post, "Population Modeling in Python", 2012/10/08
 http://austringer.net/wp/index.php/2012/10/08/population-modeling-in-python/
 
-matpopdyn.py : Original coding for Python 2, scraped from blog post, has character transliteration issues.
+matpopdyn.py : Original coding for Python 2, scraped from blog post, had character transliteration issues. Fixed character transliteration and encoding issues for clean execution in Python 2.7. Also tested for execution in Python 3.7.
 
-matpopdyn3.py : Updated for use with Python 3, character transliterations fixed, etc.
 
 Text from the blog post:
 
