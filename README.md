@@ -8,6 +8,9 @@ http://austringer.net/wp/index.php/2012/10/08/population-modeling-in-python/
 
 matpopdyn.py : Original coding for Python 2, scraped from blog post, had character transliteration issues. Fixed character transliteration and encoding issues for clean execution in Python 2.7. Also tested for execution in Python 3.7.
 
+matpopdyn.js : Javascript port of matpopdyn.py. Includes the 'LMatrix' object definition and code that applies the Leslie and Lefkovitch matrix examples. This was obtained via prompting OpenAI's ChatGPT (GPT-4) with the matpopdyn.py source. Consistency of example output was checked and passed.
+
+index.html : Web page that instantiates an interactive version of the matrix model population dynamics based on matpopdyn.js. The code was obtained by prompting OpenAI's ChatGPT (GPT-4) for such a page as a complete implementation. Tested by entry of the examples and checking their consistency of output.
 
 Text from the blog post:
 
