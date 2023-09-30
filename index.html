@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- This page was generated via prompting OpenAI's ChatGPT (GPT-4) on 2023-09-30. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Dynamics</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Population Dynamics</h2>
+
+        <label for="stAges">Number of Stages:</label>
+        <input type="number" id="stAges">
+        <button onclick="initializeMatrix()">Initialize Matrix</button>
+        <br><br>
+
+        <label for="fecundity">Fecundity (comma-separated values):</label>
+        <input type="text" id="fecundity">
+        <button onclick="addFecundity()">Add Fecundity</button>
+        <br><br>
+
+        <label for="survival">Survival (comma-separated values):</label>
+        <input type="text" id="survival">
+        <button onclick="addSurvival()">Add Survival</button>
+        <br><br>
+
+        <label for="recurrence">Recurrence (comma-separated values):</label>
+        <input type="text" id="recurrence">
+        <button onclick="addRecurrence()">Add Recurrence</button>
+        <br><br>
+
+        <label for="population">Population (comma-separated values):</label>
+        <input type="text" id="population">
+        <button onclick="setPopulation()">Set Population</button>
+        <br><br>
+
+        <button onclick="stepForward()">Step Forward</button>
+        <br><br>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="matpopdyn.js"></script>
+    <script>
+        let matrix;
+
+        function initializeMatrix() {
+            const stAges = parseInt(document.getElementById('stAges').value);
+            matrix = new LMatrix(stAges);
+            document.getElementById('output').innerText = `Matrix initialized with ${stAges} stages.`;
+        }
+
+        function addFecundity() {
+            const fecundity = document.getElementById('fecundity').value.split(',').map(Number);
+            matrix.LM_AddFecundity(fecundity);
+            document.getElementById('output').innerText = `Fecundity added: ${fecundity}`;
+        }
+
+        function addSurvival() {
+            const survival = document.getElementById('survival').value.split(',').map(Number);
+            matrix.LM_AddSurvival(survival);
+            document.getElementById('output').innerText = `Survival added: ${survival}`;
+        }
+
+        function addRecurrence() {
+            const recurrence = document.getElementById('recurrence').value.split(',').map(Number);
+            matrix.LM_AddRecurrence(recurrence);
+            document.getElementById('output').innerText = `Recurrence added: ${recurrence}`;
+        }
+
+        function setPopulation() {
+            const population = document.getElementById('population').value.split(',').map(Number);
+            matrix.LM_SetPopulation(population);
+            document.getElementById('output').innerText = `Population set: ${population}`;
+        }
+
+        function stepForward() {
+            matrix.LM_StepForward();
+            document.getElementById('output').innerText = `Population after step: ${matrix.popvec}`;
+        }
+
+    </script>
+</body>
+</html>
